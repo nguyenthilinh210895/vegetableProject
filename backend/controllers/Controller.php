@@ -3,6 +3,15 @@ class Controller{
     public $error;
     public $content;
 
+    public function __construct()
+    {
+        if(!isset($_SESSION['user']) && $_GET['controller'] != 'user'){
+            $_SESSION['error'] = "Bạn chưa đăng nhập";
+            header('Location: index.php?controller=user&action=login');
+            exit();
+        }
+    }
+
     public function render($file, $variables = []){
         extract($variables);
         ob_start();
