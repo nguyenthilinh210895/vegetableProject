@@ -1,24 +1,8 @@
-<!--
-views/categories/index.php
-Thông thường chức năng tìm kiếm trong backend sẽ nằm chung
-với trang liệt kê
-Form tìm kiếm thì sẽ ở phương thức GET
--->
 <h2>Form tìm kiếm</h2>
 <form action="" method="GET">
-    <!--
-      Nếu form sử dụng phương thức GET, cần chú ý phải thêm
-      2 input có thuộc tính name tương ứng là controller và action,
-      vì phương thức GET sẽ đổ dữ liệu của thuộc tính name của input
-      trong form lên URL, dẫn đến mất 2 tham số controller và action
-      mặc định của URL
-      -->
     <input type="hidden" name="controller" value="category" />
     <input type="hidden" name="action" value="index" />
     <div class="form-group">
-        <!--    Thẻ label dùng để kết hợp với input để tạo ra hiệu ứng
-            click vào label -> trỏ chuột input
-            -->
         <label for="name">Nhập name:</label>
         <input type="text" id="name" name="name"
                value=""
@@ -46,8 +30,8 @@ Form tìm kiếm thì sẽ ở phương thức GET
     </div>
 </form>
 
-<h1>Danh sách Product Categories</h1>
-<a href="index.php?controller=productcategory&action=create" class="btn btn-primary">
+<h1>Danh sách Blog Categories</h1>
+<a href="index.php?controller=blogcategory&action=create" class="btn btn-primary">
     <i class="fa fa-plus"></i> Thêm mới
 </a>
 <table class="table table-bordered">
@@ -60,37 +44,37 @@ Form tìm kiếm thì sẽ ở phương thức GET
         <th></th>
     </tr>
     <?php
-    if(!empty($product_categories)):
+    if(!empty($blog_categories)):
         ?>
         <?php
-        foreach ($product_categories AS $product_category):
+        foreach ($blog_categories AS $blog_category):
             ?>
             <tr>
                 <td>
-                    <?php echo $product_category['id']; ?>
+                    <?php echo $blog_category['id']; ?>
                 </td>
                 <td>
-                    <?php echo $product_category['name']; ?>
+                    <?php echo $blog_category['name']; ?>
                 </td>
                 <td>
-                    <?php echo $product_category['description']; ?>
+                    <?php echo $blog_category['description']; ?>
                 </td>
                 <td>
-                    <?php echo $product_category['created_at']; ?>
+                    <?php echo $blog_category['created_at']; ?>
                 </td>
                 <td>
-                    <?php echo $product_category['updated_at']; ?>
+                    <?php echo $blog_category['updated_at']; ?>
                 </td>
                 <td>
-                    <a href="index.php?controller=productcategory&action=detail&id=<?php echo $product_category['id']; ?>"
+                    <a href="index.php?controller=blogcategory&action=detail&id=<?php echo $blog_category['id']; ?>"
                        title="Chi tiết">
                         <i class="fa fa-eye"></i>
                     </a>
-                    <a href="index.php?controller=productcategory&action=update&id=<?php echo $product_category['id']; ?>"
+                    <a href="index.php?controller=blogcategory&action=update&id=<?php echo $blog_category['id']; ?>"
                        title="Sửa">
-                        <i class="fa fa-edit"></i>
+                        <i class="fa fa-pencil"></i>
                     </a>
-                    <a href="index.php?controller=productcategory&action=delete&id=<?php echo $product_category['id']; ?>"
+                    <a href="index.php?controller=blogcategory&action=delete&id=<?php echo $blog_category['id']; ?>"
                        title="Xóa"
                        onclick="return confirm('Are you sure?')"
                     >
@@ -115,5 +99,3 @@ Form tìm kiếm thì sẽ ở phương thức GET
 </table>
 
 <!--  hiển thị phân trang-->
-
-

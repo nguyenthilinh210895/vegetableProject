@@ -11,7 +11,10 @@
                             Product Categories
                         </a>
                     </li>
-                    <li><a href="index2.html">Dashboard2</a></li>
+                    <li><a href="index.php?controller=blogcategory&action=index">
+                            Blog Categories
+                        </a>
+                    </li>
                     <li><a href="index3.html">Dashboard3</a></li>
                 </ul>
             </li>

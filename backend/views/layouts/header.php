@@ -3,7 +3,9 @@
 <div class="col-md-3 left_col">
     <div class="left_col scroll-view">
         <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+            <a href="index.html" class="site_title">
+                <span style="align-content: center">Ogani</span>
+            </a>
         </div>
 
         <div class="clearfix"></div>
@@ -11,7 +13,13 @@
         <!-- menu profile quick info -->
         <div class="profile clearfix">
             <div class="profile_pic">
-                <img src="assets/images/img.jpg" alt="..." class="img-circle profile_img">
+                <?php if(isset($_SESSION['user']['avatar'])): ?>
+                <img src="assets/uploads/<?php echo $_SESSION['user']['avatar'];?>"
+                     alt="..." class="img-circle profile_img">
+                <?php else: ?>
+                    <img src="assets/images/user.png"
+                         alt="..." class="img-circle profile_img">
+                <?php endif; ?>
             </div>
             <div class="profile_info">
                 <span>Welcome,</span>
@@ -37,7 +45,8 @@
             <a data-toggle="tooltip" data-placement="top" title="Lock">
                 <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
             </a>
-            <a data-toggle="tooltip" data-placement="top" title="Logout" href="index.php?controller=user&action=logout">
+            <a data-toggle="tooltip" data-placement="top" title="Logout"
+               href="index.php?controller=user&action=logout">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
             </a>
         </div>

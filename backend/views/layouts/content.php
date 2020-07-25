@@ -1,6 +1,13 @@
 <?php
 ?>
 <div class="right_col" role="main">
+<!--    <div>-->
+<!--        --><?php
+//        echo "<pre>";
+//        print_r($_SESSION['user']);
+//        echo "</pre>";
+//        ?>
+<!--    </div>-->
     <?php
     if(!empty($this->error)):
     ?>

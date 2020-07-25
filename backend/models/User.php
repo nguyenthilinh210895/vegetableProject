@@ -19,9 +19,6 @@ class User extends Model
     public $created_at;
     public $updated_at;
 
-    public function getAll(){
-
-    }
     public function getUser($username){
         $sql_select_one = "SELECT * FROM  users WHERE `username` = :username";
         $obj_select = $this->connection
@@ -56,5 +53,31 @@ class User extends Model
             ':password' => $this->password
         ];
         return $obj_insert->execute($arr_insert);
+    }
+
+    public function last_login($id){
+        $sql_update = "UPDATE users SET `last_login` = :last_login WHERE `id` = $id";
+        $obj_update = $this->connection->prepare($sql_update);
+        $arr = [':last_login' => $this->last_login];
+        return $obj_update->execute($arr);
+    }
+
+    public function update($username){
+        $sql_update = "UPDATE users 
+                       SET `first_name`=:first_name, `last_name`=:last_name, `phone`=:phone, `address`=:address,
+                       `email`=:email, `avatar`=:avatar, `facebook`=:facebook
+                       WHERE `username`=:username";
+        $obj_update = $this->connection->prepare($sql_update);
+        $arr_update = [
+            ':first_name' => $this->first_name,
+            ':last_name' => $this->last_name,
+            ':phone' => $this->phone,
+            ':address' => $this->address,
+            ':email' => $this->email,
+            ':avatar' => $this->avatar,
+            ':facebook' => $this->facebook,
+            ':username' => $username
+        ];
+        return $obj_update->execute($arr_update);
     }
 }
