@@ -11,7 +11,8 @@ class ProductCategory extends Model
     public function getAll(){
         $sql_select_all = "SELECT * FROM product_categories";
         $obj_select = $this->connection->prepare($sql_select_all);
-        $product_categories = $obj_select->execute();
+        $obj_select->execute();
+        $product_categories = $obj_select->fetchAll(PDO::FETCH_ASSOC);
         return $product_categories;
     }
 }

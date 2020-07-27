@@ -111,19 +111,11 @@
                         <span>All departments</span>
                     </div>
                     <ul>
-                        <?php foreach ($product_categories AS $product_category): ?>
+                        <?php foreach ($_SESSION['product_categories'] AS $product_category): ?>
                         <li><a href="#"><?php echo $product_category['name'];?></a></li>
                         <?php endforeach; ?>
                         <li><a href="#">1 Vegetables</a></li>
                         <li><a href="#">Fruit & Nut Gifts</a></li>
-                        <li><a href="#">Fresh Berries</a></li>
-                        <li><a href="#">Ocean Foods</a></li>
-                        <li><a href="#">Butter & Eggs</a></li>
-                        <li><a href="#">Fastfood</a></li>
-                        <li><a href="#">Fresh Onion</a></li>
-                        <li><a href="#">Papayaya & Crisps</a></li>
-                        <li><a href="#">Oatmeal</a></li>
-                        <li><a href="#">Fresh Bananas</a></li>
                     </ul>
                 </div>
             </div>
