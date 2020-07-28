@@ -5,10 +5,6 @@
  * Date: 7/28/2020
  * Time: 2:39 PM
  */
-echo "<pre>";
-    print_r($_SESSION['cart']);
-echo "</pre>";
-
 ?>
 <section class="breadcrumb-section set-bg" data-setbg="assets/img/breadcrumb.jpg">
     <div class="container">
@@ -147,7 +143,7 @@ echo "</pre>";
                         <li>Subtotal <span>$<?php echo number_format($total_cart); ?></span></li>
                         <li>Total <span>$<?php echo number_format($total_cart); ?></span></li>
                     </ul>
-                    <a href="#" class="primary-btn">PROCEED TO CHECKOUT</a>
+                    <a href="index.php?controller=payment&action=index" class="primary-btn">PROCEED TO CHECKOUT</a>
                 </div>
             </div>
         </div>
@@ -157,7 +153,7 @@ echo "</pre>";
 <section class="shoping-cart spad">
     <div class="container" style="text-align: center">
         <div >
-            <img src="assets/img/cart/emptycart.png" height="45%    " width="45%">
+            <img src="assets/img/cart/emptycart.png" height="45%" width="45%">
             <h3>Bạn chưa có sản phẩm nào trong giỏ hàng!</h3>
         </div>
     </div>
