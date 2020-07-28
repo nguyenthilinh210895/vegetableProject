@@ -101,10 +101,6 @@
 <?php require_once 'views/layouts/header.php';?>
 <!-- Header Section End -->
 
-<!-- Hero Section Begin -->
-<?php require_once 'views/layouts/search.php';?>
-<!-- Hero Section End -->
-
 <!-- Featured Section Begin -->
 <?php echo $this->content; ?>
 <!-- Featured Section End -->

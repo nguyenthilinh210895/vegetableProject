@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteRule home index.php?controller=home&action=index
+RewriteRule them-vao-gio-hang/([0-9]{1,}) index.php?controller=cart&action=add&id=$1
+RewriteRule gio-hang-cua-ban index.php?controller=cart&action=index

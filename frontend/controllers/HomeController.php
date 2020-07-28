@@ -20,6 +20,6 @@ class HomeController extends Controller
             'products' => $products,
             'product_categories' => $product_categories
         ]);
-        require_once 'views/layouts/main.php';
+        require_once 'views/layouts/home_main.php';
     }
 }

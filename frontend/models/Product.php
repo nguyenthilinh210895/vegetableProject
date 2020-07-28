@@ -19,4 +19,12 @@ class Product extends Model
         $products = $obj_select_all->fetchAll(PDO::FETCH_ASSOC);
         return $products;
     }
+
+    public function getProductById($id){
+        $sql_select = "SELECT * FROM products WHERE id = $id";
+        $obj_select = $this->connection->prepare($sql_select);
+        $obj_select->execute();
+        $product = $obj_select->fetch(PDO::FETCH_ASSOC);
+        return $product;
+    }
 }
