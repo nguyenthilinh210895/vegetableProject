@@ -25,7 +25,7 @@
 
 
     <h2>Danh sách sản phẩm</h2>
-    <a href="index.php?controller=product&action=create" class="btn btn-success">
+    <a href="them-moi-san-pham" class="btn btn-success">
         <i class="fa fa-plus"></i> Thêm mới
     </a>
     <table class="table table-bordered">
@@ -42,7 +42,9 @@
             <th>Updated_at</th>
             <th></th>
         </tr>
+<!--        --><?php //echo $_SERVER['SCRIPT_NAME'];?>
         <?php
+
         if(!empty($products)):
         ?>
         <?php
@@ -65,9 +67,9 @@
                 <td><?php echo !empty($product['updated_at']) ? date('d-m-Y H:i:s', strtotime($product['updated_at'])) :'--' ;?></td>
                 <td>
                     <?php
-                    $url_detail = "index.php?controller=product&action=detail&id=".$product['id'];
-                    $url_update = "index.php?controller=product&action=update&id=".$product['id'];
-                    $url_delete = "index.php?controller=product&action=delete&id=".$product['id'];
+                    $url_detail = "chi-tiet-san-pham/".$product['id'];
+                    $url_update = "chinh-sua-san-pham/".$product['id'];
+                    $url_delete = "xoa-san-pham/".$product['id'];
                     ?>
                     <a href="<?php echo $url_detail;?>" title="Chi tiết"><i class="fa fa-eye"></i> </a>
                     <a href="<?php echo $url_update;?>" title="Chỉnh sửa"><i class="fa fa-pencil"></i> </a>

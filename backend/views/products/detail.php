@@ -33,4 +33,4 @@
                 <td><?php echo !empty($product['updated_at']) ? date('d-m-Y H:i:s', strtotime($product['updated_at'])) :'--' ;?></td>
             </tr>
 </table>
-<a href="index.php?controller=product&action=index" class="btn btn-primary">Back</a>
+<a href="product" class="btn btn-primary">Back</a>

@@ -82,7 +82,7 @@
     </div>
     <div class="form-group">
         <input type="submit" name="submit" value="Edit" class="btn btn-primary"/>
-        <a href="index.php?controller=product&action=index" class="btn btn-default">Back</a>
+        <a href="product" class="btn btn-default">Back</a>
     </div>
 </form>
 

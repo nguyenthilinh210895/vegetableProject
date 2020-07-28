@@ -8,6 +8,10 @@ class ProductController extends Controller
     public function index(){
         $product_model = new Product();
         $products = $product_model->getAll();
+//        echo "<pre>";
+//        print_r($products);
+//        echo "</pre>";
+//        die;
         $this->content = $this->render('views/products/index.php', [
             'products' => $products
         ]);
@@ -15,9 +19,6 @@ class ProductController extends Controller
     }
 
     public function create(){
-        echo "<pre>";
-        print_r($_POST);
-        echo "</pre>";
         if(isset($_POST['submit'])){
             $product_category_id = $_POST['product_category_id'];
             $title = $_POST['title'];
@@ -67,20 +68,25 @@ class ProductController extends Controller
                 }else{
                     $_SESSION['error'] = "Thêm sản phẩm thất bại";
                 }
-                header('Location: index.php?controller=product');
+                $url_redirect = $_SERVER['SCRIPT_NAME'].'/product';
+                header("Location: $url_redirect");
                 exit();
             }
         }
         $product_category_model = new ProductCategory();
         $product_categories = $product_category_model->getAll();
-        $this->content = $this->render('views/products/create.php', ['product_categories' => $product_categories]);
+        $this->content = $this->render('views/products/create.php',
+            [
+                'product_categories' => $product_categories
+            ]);
         require_once 'views/layouts/main.php';
     }
 
     public function detail(){
         if(!isset($_GET['id']) || !is_numeric($_GET['id'])){
             $_SESSION['error'] = "Sản phẩm không tồn tại";
-            header('Location: index.php?controller=product');
+            $url_redirect = $_SERVER['SCRIPT_NAME'].'/product';
+            header("Location: $url_redirect");
             exit();
         }
 
@@ -94,7 +100,8 @@ class ProductController extends Controller
     public function update(){
         if(!isset($_GET['id']) || !is_numeric($_GET['id'])){
             $_SESSION['error'] = 'Sản phẩm không tồn tại';
-            header('Location: index.php?controller=product');
+            $url_redirect = $_SERVER['SCRIPT_NAME'].'/product';
+            header("Location: $url_redirect");
             exit();
         }
         $id = $_GET['id'];
@@ -146,7 +153,8 @@ class ProductController extends Controller
                 }else{
                     $_SESSION['error'] = "Cập nhật thất bại";
                 }
-                header('Location: index.php?controller=product');
+                $url_redirect = $_SERVER['SCRIPT_NAME'].'/product';
+                header("Location: $url_redirect");
                 exit();
             }
         }
@@ -162,7 +170,8 @@ class ProductController extends Controller
     public function delete(){
         if(!isset($_GET['id']) || !is_numeric($_GET['id'])){
             $_SESSION['error'] = "Sản phẩm không tồn tại";
-            header('Location: index.php?controller=product');
+            $url_redirect = $_SERVER['SCRIPT_NAME'].'/product';
+            header("Location: $url_redirect");
             exit();
         }
         $id = $_GET['id'];
@@ -173,7 +182,8 @@ class ProductController extends Controller
         }else{
             $_SESSION['error'] = "Xóa thất bại";
         }
-        header('Location: index.php?controller=product');
+        $url_redirect = $_SERVER['SCRIPT_NAME'].'/product';
+        header("Location: $url_redirect");
         exit();
     }
 }

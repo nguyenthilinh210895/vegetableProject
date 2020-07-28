@@ -10,6 +10,7 @@
 <html lang="zxx">
 
 <head>
+    <base href="<?php $_SERVER['SCRIPT_NAME']; ?>"/>
     <meta charset="UTF-8">
     <meta name="description" content="Ogani Template">
     <meta name="keywords" content="Ogani, unica, creative, html">
@@ -111,7 +112,7 @@
                         <span>All departments</span>
                     </div>
                     <ul>
-                        <?php foreach ($_SESSION['product_categories'] AS $product_category): ?>
+                        <?php foreach ($product_categories AS $product_category): ?>
                         <li><a href="#"><?php echo $product_category['name'];?></a></li>
                         <?php endforeach; ?>
                         <li><a href="#">1 Vegetables</a></li>
