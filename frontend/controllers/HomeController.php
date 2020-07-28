@@ -14,9 +14,11 @@ class HomeController extends Controller
         $product_model = new Product();
         $product_category_model = new ProductCategory();
         $products = $product_model->getAll();
-        $_SESSION['product_categories'] = $product_category_model->getAll();
+//        $_SESSION['product_categories'] = $product_category_model->getAll();
+        $product_categories = $product_category_model->getAll();
         $this->content = $this->render('views/homes/index.php',[
-            'products' => $products
+            'products' => $products,
+            'product_categories' => $product_categories
         ]);
         require_once 'views/layouts/main.php';
     }

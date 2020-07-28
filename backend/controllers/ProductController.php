@@ -67,20 +67,25 @@ class ProductController extends Controller
                 }else{
                     $_SESSION['error'] = "Thêm sản phẩm thất bại";
                 }
-                header('Location: index.php?controller=product');
+                $url_redirect = $_SERVER['SCRIPT_NAME'].'/product';
+                header("Location: $url_redirect");
                 exit();
             }
         }
         $product_category_model = new ProductCategory();
         $product_categories = $product_category_model->getAll();
-        $this->content = $this->render('views/products/create.php', ['product_categories' => $product_categories]);
+        $this->content = $this->render('views/products/create.php',
+            [
+                'product_categories' => $product_categories
+            ]);
         require_once 'views/layouts/main.php';
     }
 
     public function detail(){
         if(!isset($_GET['id']) || !is_numeric($_GET['id'])){
             $_SESSION['error'] = "Sản phẩm không tồn tại";
-            header('Location: index.php?controller=product');
+            $url_redirect = $_SERVER['SCRIPT_NAME'].'/product';
+            header("Location: $url_redirect");
             exit();
         }
 

@@ -65,7 +65,7 @@
                 <td><?php echo !empty($product['updated_at']) ? date('d-m-Y H:i:s', strtotime($product['updated_at'])) :'--' ;?></td>
                 <td>
                     <?php
-                    $url_detail = "index.php?controller=product&action=detail&id=".$product['id'];
+                    $url_detail = "chi-tiet-san-pham/".$product['id'];
                     $url_update = "index.php?controller=product&action=update&id=".$product['id'];
                     $url_delete = "index.php?controller=product&action=delete&id=".$product['id'];
                     ?>
