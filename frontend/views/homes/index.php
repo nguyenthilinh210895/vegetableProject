@@ -44,10 +44,19 @@
                 <div class="featured__item">
                     <div class="featured__item__pic set-bg" data-setbg="../backend/assets/uploads/<?php echo $product['avatar']; ?>">
                         <ul class="featured__item__pic__hover">
-                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                            <li>
+                                <?php
+                                $url_favorite = "index.php?controller=favorite&action=add&id=".$product['id'];
+                                ?>
+                                <a href="<?php echo $url_favorite;?>">
+                                    <i class="fa fa-heart"></i>
+                                </a>
+                            </li>
                             <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                            <?php $url = "index.php?controller=cart&action=add&id=".$product['id'];?>
-                            <li><a href="<?php echo $url; ?>"><i class="fa fa-shopping-cart"></i></a></li>
+                            <?php
+                            $url_cart = "index.php?controller=cart&action=add&id=".$product['id'];
+                            ?>
+                            <li><a href="<?php echo $url_cart;?>"><i class="fa fa-shopping-cart"></i></a></li>
                         </ul>
                     </div>
                     <div class="featured__item__text">

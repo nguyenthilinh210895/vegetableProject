@@ -19,8 +19,6 @@
                         <?php foreach ($product_categories AS $product_category): ?>
                             <li><a href="#"><?php echo $product_category['name'];?></a></li>
                         <?php endforeach; ?>
-                        <li><a href="#">1 Vegetables</a></li>
-                        <li><a href="#">Fruit & Nut Gifts</a></li>
                     </ul>
                 </div>
             </div>

@@ -106,7 +106,9 @@
 <!-- Hero Section End -->
 
 <!-- Featured Section Begin -->
-<?php echo $this->content; ?>
+<?php
+//echo $_SERVER['SCRIPT_NAME'];
+echo $this->content; ?>
 <!-- Featured Section End -->
 
 <!-- Footer Section Begin -->

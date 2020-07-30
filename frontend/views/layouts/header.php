@@ -53,7 +53,7 @@
             <div class="col-lg-6">
                 <nav class="header__menu">
                     <ul>
-                        <li class="active"><a href="./index.html">Home</a></li>
+                        <li class="active"><a href="index.php?controller=home">Home</a></li>
                         <li><a href="./shop-grid.html">Shop</a></li>
                         <li><a href="#">Pages</a>
                             <ul class="header__menu__dropdown">
@@ -70,11 +70,37 @@
             </div>
             <div class="col-lg-3">
                 <div class="header__cart">
+                    <?php
+                    if(isset($_SESSION['cart'])):
+                        $total_price = 0;
+                        $count_product = count($_SESSION['cart']);
+                        foreach ($_SESSION['cart'] AS $cart){
+                            $total_price += $cart['quantity'] * $cart['price'];
+                        }
+                        $count_favorite = 0;
+                        if(isset($_SESSION['favorite'])){
+                            $count_favorite = count($_SESSION['favorite'], 0);
+                        }
+                    ?>
                     <ul>
-                        <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                        <li><a href="index.php?controller=cart&action=index"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        <li>
+                            <a href="#"><i class="fa fa-heart">
+                                </i> <span><?php echo $count_favorite; ?></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="index.php?controller=cart&action=index"><i class="fa fa-shopping-bag">
+                                </i> <span><?php echo $count_product; ?></span></a>
+                        </li>
                     </ul>
-                    <div class="header__cart__price">item: <span>$150.00</span></div>
+                    <div class="header__cart__price">item: <span>$<?php echo number_format($total_price); ?></span></div>
+                    <?php else: ?>
+                    <ul>
+                        <li><a href="#"><i class="fa fa-heart"></i> <span>0</span></a></li>
+                        <li><a href="index.php?controller=cart&action=index"><i class="fa fa-shopping-bag"></i> <span>0</span></a></li>
+                    </ul>
+                    <div class="header__cart__price">item: <span>$0</span></div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

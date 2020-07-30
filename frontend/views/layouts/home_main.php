@@ -102,7 +102,8 @@
 <!-- Header Section End -->
 
 <!-- Featured Section Begin -->
-<?php echo $this->content; ?>
+<?php
+echo $this->content; ?>
 <!-- Featured Section End -->
 
 <!-- Footer Section Begin -->
