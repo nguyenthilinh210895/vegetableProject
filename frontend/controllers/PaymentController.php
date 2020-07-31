@@ -48,6 +48,7 @@ class PaymentController extends Controller
                         $order_detail_model->quantity = $cart['quantity'];
                         $is_insert = $order_detail_model->insert();
                         var_dump($is_insert);
+//                        die();
                     }
                     if($method == 0){
 

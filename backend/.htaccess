@@ -25,3 +25,4 @@ RewriteRule them-moi-san-pham index.php?controller=product&action=create
 RewriteRule chi-tiet-san-pham/([0-9]{1,}) index.php?controller=product&action=detail&id=$1
 RewriteRule chinh-sua-san-pham/([0-9]{1,}) index.php?controller=product&action=update&id=$1
 RewriteRule xoa-san-pham/([0-9]{1,}) index.php?controller=product&action=delete&id=$1
+RewriteRule productcategory index.php?contrller=productcategory&action=index

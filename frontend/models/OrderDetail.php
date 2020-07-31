@@ -13,7 +13,7 @@ class OrderDetail extends Model
     public $quantity;
 
     public function insert(){
-        $sql_insert = "INSERT INTO orders(`order_id`, `product_id`, `quantity`)
+        $sql_insert = "INSERT INTO order_detail(`order_id`, `product_id`, `quantity`)
                       VALUES (:order_id, :product_id, :quantity)
                       ";
         $obj_insert = $this->connection->prepare($sql_insert);
