@@ -47,7 +47,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="./index.html"><img src="assets/img/logo.png" alt=""></a>
+                    <a href="index.php?controller=home"><img src="assets/img/logo.png" alt=""></a>
                 </div>
             </div>
             <div class="col-lg-6">
@@ -57,14 +57,14 @@
                         <li><a href="./shop-grid.html">Shop</a></li>
                         <li><a href="#">Pages</a>
                             <ul class="header__menu__dropdown">
-                                <li><a href="./shop-details.html">Shop Details</a></li>
-                                <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                <li><a href="./checkout.html">Check Out</a></li>
+<!--                                <li><a href="./shop-details.html">Shop Details</a></li>-->
+                                <li><a href="index.php?controller=cart&action=index">Shoping Cart</a></li>
+                                <li><a href="index.php?controller=payment&action=index">Check Out</a></li>
                                 <li><a href="./blog-details.html">Blog Details</a></li>
                             </ul>
                         </li>
                         <li><a href="./blog.html">Blog</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
+                        <li><a href="index.php?controller=contact&action=index">Contact</a></li>
                     </ul>
                 </nav>
             </div>

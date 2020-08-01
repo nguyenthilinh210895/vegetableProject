@@ -30,15 +30,15 @@ class CartController extends Controller
         }
 //        $url_redirect = $_SERVER['SCRIPT_NAME'] . '/gio-hang-cua-ban';
 //        header("Location: $url_redirect");
-        header("Location: index.php?controller=cart&action=index");
+        header("Location: index.php?controller=home&action=index");
         exit();
     }
 
     public function index(){
-        echo "<pre>";
-        print_r($_POST);
-        print_r($_SESSION);
-        echo "</pre>";
+//        echo "<pre>";
+//        print_r($_POST);
+//        print_r($_SESSION);
+//        echo "</pre>";
         if(isset($_POST['submit'])){
             foreach ($_SESSION['cart'] AS $product_id => $cart){
                 $_SESSION['cart'][$product_id]['quantity'] = $_POST[$product_id];

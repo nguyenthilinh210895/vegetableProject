@@ -7,6 +7,9 @@
  */
 //require_once 'helpers/Helper.php';
 ?>
+<?php
+if(isset($_SESSION['cart'])):
+?>
 <section class="shoping-cart spad">
 <div class="container">
     <h2 style="text-align: center">Thanh toán</h2>
@@ -75,9 +78,6 @@
             </div>
             <div class="col-md-6 col-sm-6">
                 <h5 style="text-align: center">Thông tin đơn hàng</h5>
-                <?php
-                if(isset($_SESSION['cart'])):
-                ?>
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="shoping__cart__table">
@@ -127,7 +127,6 @@
                             </div>
                         </div>
                     </div>
-                <?php endif; ?>
             </div>
         </div>
         <input type="submit" name="submit" value="Thanh toán" class="site-btn"/>
@@ -135,3 +134,8 @@
     </form>
 </div>
 </section>
+<?php else:
+    header("Location: index.php?controller=home&action=index");
+exit();
+?>
+<?php endif; ?>
