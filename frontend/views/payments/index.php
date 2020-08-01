@@ -32,7 +32,7 @@ if(isset($_SESSION['cart'])):
                            id="last_name"
                            value=""
                            class="form-control"
-                           placeholder=""
+                           placeholder="Your last name"
                     />
                 </div>
                 <div class="form-group">
@@ -41,7 +41,7 @@ if(isset($_SESSION['cart'])):
                            id="address"
                            value=""
                            class="form-control"
-                           placeholder=""
+                           placeholder="Your address"
                     />
                 </div>
                 <div class="form-group">
@@ -51,7 +51,7 @@ if(isset($_SESSION['cart'])):
                            min="0"
                            value=""
                            class="form-control"
-                           placeholder=""
+                           placeholder="Your phone number"
                     />
                 </div>
                 <div class="form-group">
@@ -60,7 +60,7 @@ if(isset($_SESSION['cart'])):
                            id="email"
                            value=""
                            class="form-control"
-                           placeholder=""
+                           placeholder="Your Email"
                     />
                 </div>
                 <div class="form-group">
@@ -72,8 +72,8 @@ if(isset($_SESSION['cart'])):
                 </div>
                 <div class="form-group">
                     <label>Phương thức thanh toán</label><br/>
-                    <input type="radio" name="method" value="0"/>Thanh toán trực tuyến<br/>
-                    <input type="radio" name="method" value="1"/>COD<br/>
+                    <input type="radio" name="method" value="0" id="online"/><label for="online">Thanh toán trực tuyến</label><br/>
+                    <input type="radio" name="method" value="1" id="cod"/><label for="cod">COD</label><br/>
                 </div>
             </div>
             <div class="col-md-6 col-sm-6">
@@ -135,7 +135,7 @@ if(isset($_SESSION['cart'])):
 </div>
 </section>
 <?php else:
-    header("Location: index.php?controller=home&action=index");
-exit();
+    header("Location: index.php?controller=cart&action=index");
+    exit();
 ?>
 <?php endif; ?>

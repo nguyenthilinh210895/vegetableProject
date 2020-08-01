@@ -8,6 +8,8 @@
 require_once 'controllers/Controller.php';
 require_once 'models/Product.php';
 require_once 'models/ProductCategory.php';
+require_once 'models/Blog.php';
+require_once 'models/BlogCategory.php';
 class HomeController extends Controller
 {
     public function index(){

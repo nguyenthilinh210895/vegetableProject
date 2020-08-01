@@ -55,15 +55,15 @@
                     <ul>
                         <li class="active"><a href="index.php?controller=home">Home</a></li>
                         <li><a href="./shop-grid.html">Shop</a></li>
-                        <li><a href="#">Pages</a>
+                        <li><a href="#">Cart</a>
                             <ul class="header__menu__dropdown">
 <!--                                <li><a href="./shop-details.html">Shop Details</a></li>-->
                                 <li><a href="index.php?controller=cart&action=index">Shoping Cart</a></li>
                                 <li><a href="index.php?controller=payment&action=index">Check Out</a></li>
-                                <li><a href="./blog-details.html">Blog Details</a></li>
+<!--                                <li><a href="./blog-details.html">Blog Details</a></li>-->
                             </ul>
                         </li>
-                        <li><a href="./blog.html">Blog</a></li>
+                        <li><a href="index.php?controller=blog&action=index">Blog</a></li>
                         <li><a href="index.php?controller=contact&action=index">Contact</a></li>
                     </ul>
                 </nav>
