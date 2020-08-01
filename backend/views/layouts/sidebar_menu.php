@@ -11,11 +11,19 @@
                             Product Categories
                         </a>
                     </li>
+                    <li>
+                        <a href="index.php?controller=order&action=index">
+                            Orders
+                        </a>
+                    </li>
+                    <li><a href="index.php?controller=blog&action=index">
+                            Blogs
+                        </a>
+                    </li>
                     <li><a href="index.php?controller=blogcategory&action=index">
                             Blog Categories
                         </a>
                     </li>
-                    <li><a href="index.php?controller=order&action=index">Orders</a></li>
                 </ul>
             </li>
 <!--            <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>-->
